@@ -48,7 +48,7 @@ window.addEventListener('load', ()=>{
     const expiresIn = searchParams.get("expires_in")
     if(accessToken) {
       window.close();
-      // this openner will setitmes in local storage
+      // this openner will set itmes in local storage
       window.opener.setItemsLocalStorage({accessToken, tokenType, expiresIn})
       
     }else {
