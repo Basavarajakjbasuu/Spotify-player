@@ -1,8 +1,9 @@
-const CLIENT_ID = "02bfed7678d44411876528b8b3c325c4"
+import { ACCESS_TOKEN, EXPIRES_IN, TOKEN_TYPE } from "../common"
+
+const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 const scopes = "user-top-read user-follow-read playlist-read-private user-library-read"
-const REDIRECT_URI = "http://localhost:3000/login/login.html"
-const ACCESS_TOKEN_KEY = "accessToken"
-const APP_URL = "http://localhost:3000"
+const APP_URL = import.meta.env.VITE_APP_URL; ;
+const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
 
 // Authorising the user 
 const authorizeUser = () => {
@@ -17,14 +18,14 @@ document.addEventListener("DOMContentLoaded" , () => {
 
 // Storing expiresIn time, AccsseToken and Token type in localStorage
 window.setItemsLocalStorage = ({accessToken, tokenType, expiresIn}) =>{
-  localStorage.setItem("expriesIn", expiresIn)
-  localStorage.setItem("accessToken", accessToken)
-  localStorage.setItem("tokenType", tokenType)
+  localStorage.setItem(EXPIRES_IN, expiresIn)
+  localStorage.setItem(ACCESS_TOKEN, accessToken)
+  localStorage.setItem(TOKEN_TYPE, tokenType)
   window.location.href = APP_URL
 }
 
 window.addEventListener('load', ()=>{
-  const accessToken = localStorage.getItem(ACCESS_TOKEN_KEY);
+  const accessToken = localStorage.getItem(ACCESS_TOKEN);
   // If acessToken is there then redirect to dashBoard
   if(accessToken) {
     window.location.href = `${APP_URL}/dashboard/dashboard.html`
