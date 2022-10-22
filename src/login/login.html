@@ -1,13 +1,25 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spotify Player</title>
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
-  <h1 class="text-3xl underline font-bold">Wellcome to Login</h1>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Spotify Player</title>
+		<link rel="stylesheet" href="../style.css" />
+		<script defer src="login.js" type="module"></script>
+	</head>
+	<body class="h-screen bg-spotifyGreen">
+		<main class="flex h-full w-full items-center justify-center">
+			<section class="flex flex-col items-center gap-8 ">
+				<img class="h-[20vh] " src="./logo-black.png" alt="Spotify Image" />
+				<input
+					id="login-to-spotify"
+					type="button"
+					value="Login to Spotify"
+					class="h-12 w-64 rounded-md bg-dark text-white hover:cursor-pointer" />
+			</section>
+		</main>
+	</body>
 </html>
